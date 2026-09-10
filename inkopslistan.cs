@@ -37,8 +37,21 @@ List<int> prices = []; // List for prices
 
 while (true)
 {
-    Console.WriteLine("Skriv ett varunamn: ");
-    string? input = Console.ReadLine()!;
+    Console.WriteLine("Skriv ett varunamn: "); // Fråga efter en vara
+    string? iteminput = Console.ReadLine()!;
+
+    Console.WriteLine("Skriv ett pris: ");
+    int priceinput; // Fråga efter priset på en vara
+
+    if (int.TryParse(Console.ReadLine(), out priceinput))
+    {
+        items.Add(iteminput);
+        prices.Add(priceinput);
+    }
+    else
+    {
+        Console.WriteLine("Skriv ett giltligt pris: ");
+    }
 
     for (int i = 0; i < items.Count; i++)
     {
