@@ -31,7 +31,17 @@ Krav för godkänt (del A)
 [ ] Ett pris som inte är ett heltal, eller ett nummer som inte finns, hanteras utan att programmet 
 */
 
-List<string> items = [];
+List<string> items = []; // List for items
 
-List<string> prices = [];
+List<int> prices = []; // List for prices
 
+while (true)
+{
+    Console.WriteLine("Skriv ett varunamn: ");
+    string? input = Console.ReadLine()!;
+
+    for (int i = 0; i < items.Count; i++)
+    {
+        Console.WriteLine($"{items[i]} - {prices[i]} kr");
+    }
+}
