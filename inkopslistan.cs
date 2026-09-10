@@ -35,7 +35,7 @@ List<string> items = []; // List for items
 
 List<int> prices = []; // List for prices
 
-while (true)
+while (true) 
 {
     Console.WriteLine("Skriv ett varunamn: "); // Fråga efter en vara
     string? iteminput = Console.ReadLine()!;
@@ -49,7 +49,7 @@ while (true)
         {
             items.Add(iteminput); // Lägger till vara och pris
             prices.Add(priceinput);
-            break;
+            break; //Stoppar inre while loopen
         }
         else
         {
@@ -61,4 +61,7 @@ while (true)
     {
     Console.WriteLine($"{i + 1}. {items[i]} - {prices[i]} kr"); // Skriver ut vara och pris 
     }
+
+    int total = prices.Sum();
+    Console.WriteLine("Totalsumma: " + total + " kr");
 }
