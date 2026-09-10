@@ -40,21 +40,25 @@ while (true)
     Console.WriteLine("Skriv ett varunamn: "); // Fråga efter en vara
     string? iteminput = Console.ReadLine()!;
 
-    Console.WriteLine("Skriv ett pris: ");
-    int priceinput; // Fråga efter priset på en vara
+    while(true)
+    {
+        Console.WriteLine("Skriv ett pris: ");
+        int priceinput; // Fråga efter priset på en vara
 
-    if (int.TryParse(Console.ReadLine(), out priceinput))
-    {
-        items.Add(iteminput);
-        prices.Add(priceinput);
-    }
-    else
-    {
-        Console.WriteLine("Skriv ett giltligt pris: ");
-    }
+        if (int.TryParse(Console.ReadLine(), out priceinput)) // Kollar att int är ett heltal
+        {
+            items.Add(iteminput); // Lägger till vara och pris
+            prices.Add(priceinput);
+            break;
+        }
+        else
+        {
+            Console.WriteLine("Skriv ett giltligt pris\n"); // Skrivs om int inte är ett heltal
+        }
+    }    
 
     for (int i = 0; i < items.Count; i++)
     {
-        Console.WriteLine($"{items[i]} - {prices[i]} kr");
+    Console.WriteLine($"{i + 1}. {items[i]} - {prices[i]} kr"); // Skriver ut vara och pris 
     }
 }
