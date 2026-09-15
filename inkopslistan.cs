@@ -78,7 +78,7 @@
         }
 
         int total = prices.Sum();
-        Console.WriteLine("Totalsumma: " + total + " kr"); // Totalsumman räknas ut och skrivs ut 
+        Console.WriteLine("Totalsumma: " + total + " kr\n"); // Totalsumman räknas ut och skrivs ut 
 
 
     }
